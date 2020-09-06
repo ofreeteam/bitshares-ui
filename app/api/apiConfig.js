@@ -116,30 +116,36 @@ export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://fake.automatic-selection.com",
     WS_NODE_LIST: [
         {
+            url: "wss://web.cnvote.vip:80",
+            region: "TESTNET - cnvote",
+            location: "cnvote",
+            operator: "cnvote"
+        },
+        {
             url: "wss://fake.automatic-selection.com",
             location: {translate: "settings.api_closest"}
         },
         {
             url: "ws://127.0.0.1:8090",
             location: "Locally hosted"
-        }, 
-        {
-            url: "wss://citadel.li/node",
-            region: "Western Europe",
-            country: "Iceland",
-            location: "Reykjavik",
-            operator: "CITADEL",
-            contact: "email:citadel.li;support"
-        },
-        // Testnet
-        {
-            url: "wss://web.cnvote.vip:80",
-            region: "TESTNET - cnvote",
-            country: "unknown",
-            location: "unknown",
-            operator: "cnvote",
-            contact: "unknown"
         }
+        // {
+        //     url: "wss://citadel.li/node",
+        //     region: "Western Europe",
+        //     country: "Iceland",
+        //     location: "Reykjavik",
+        //     operator: "CITADEL",
+        //     contact: "email:citadel.li;support"
+        // },
+        // // Testnet
+        // {
+        //     url: "wss://web.cnvote.vip:80",
+        //     region: "TESTNET - cnvote",
+        //     country: "unknown",
+        //     location: "unknown",
+        //     operator: "cnvote",
+        //     contact: "unknown"
+        // }
     ],
     ES_WRAPPER_LIST: [
         {

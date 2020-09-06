@@ -251,6 +251,8 @@ class BorrowModalContent extends React.Component {
         let collateral;
         let ratio = 0;
 
+        console.log("111111");
+
         if (e.target) {
             // Ensure input is valid
             const regexp_numeral = new RegExp(/[[:digit:]]/);

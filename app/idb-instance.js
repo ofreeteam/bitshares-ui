@@ -31,6 +31,8 @@ var getDatabaseName = function(
     current_wallet = current_wallet_name,
     chain_id = __DEPRECATED__ ? MAIN_NET_CHAINID : Apis.instance().chain_id
 ) {
+    window.Apis = Apis;
+    console.log("------------ chain_id", chain_id);
     return [
         DB_PREFIX,
         chain_id ? chain_id.substring(0, 6) : "",
