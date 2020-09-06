@@ -467,10 +467,10 @@ class SettingsStore {
             };
 
             let coreAssets = {
-                markets_4018d784: "BTS",
+                markets_4018d784: "NBS",
                 markets_39f5e2ed: "TEST"
             };
-            let coreAsset = coreAssets[this.starredKey] || "BTS";
+            let coreAsset = coreAssets[this.starredKey] || "NBS";
             /*
              * Update units depending on the chain, also make sure the 0 index
              * asset is always the correct CORE asset name

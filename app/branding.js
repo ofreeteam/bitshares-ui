@@ -45,7 +45,7 @@ export function getFaucet() {
         url: "https://faucet.nbs.life/", // 2017-12-infrastructure worker proposal
         show: true,
         editable: false,
-        referrer: "cnvote-test"//nbs todo
+        referrer: "cnvote-test" //nbs todo
     };
 }
 
@@ -93,14 +93,14 @@ export function getUnits() {
     if (_isTestnet()) {
         return ["TEST"];
     }
-    return ["BTS", "USD", "CNY", "BTC", "EUR", "GBP"];
+    return ["NBS", "CNY", "RMB"];
 }
 
 export function getDefaultMarket() {
     if (_isTestnet()) {
-        return "USD_TEST";
+        return "NBS_TEST";
     }
-    return "USD_BTS";
+    return "NBS_TEST";
 }
 
 /**
@@ -112,7 +112,7 @@ export function getMyMarketsBases() {
     if (_isTestnet()) {
         return ["TEST"];
     }
-    return ["BTS", "BTC", "ETH", "USD", "CNY"];
+    return ["NBS", "BTC", "ETH", "USD", "CNY"];
 }
 
 /**
@@ -127,7 +127,7 @@ export function getMyMarketsQuotes() {
     let tokens = {
         nativeTokens: [
             "BTC",
-            "BTS",
+            "NBS",
             "CNY",
             "EUR",
             "GOLD",
