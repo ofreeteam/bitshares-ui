@@ -117,7 +117,7 @@ class WalletActions {
                 }
 
                 let create_account_promise = fetch(
-                    faucetAddress + "/api/v1/accounts",
+                    faucetAddress + "api/v1/accounts",
                     {
                         method: "post",
                         mode: "no-cors",
@@ -223,7 +223,7 @@ class WalletActions {
             }
 
             let create_account_promise = fetch(
-                faucetAddress + "/api/v1/accounts",
+                faucetAddress + "api/v1/accounts",
                 {
                     method: "post",
                     mode: "no-cors",
