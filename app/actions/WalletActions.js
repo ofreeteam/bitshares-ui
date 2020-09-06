@@ -143,15 +143,15 @@ class WalletActions {
                         })
                     }
                 )
-                    .then(r =>
+                    .then(r => {
                         r.json().then(res => {
                             if (!res || (res && res.error)) {
                                 reject(res.error);
                             } else {
                                 resolve(res);
                             }
-                        })
-                    )
+                        });
+                    })
                     .catch(reject);
 
                 return create_account_promise
