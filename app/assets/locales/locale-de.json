@@ -1059,7 +1059,7 @@
         },
         "workers": {
             "create": "Einen neuen Arbeiterantrag erstellen",
-            "create_text_1": "Um einen neuen Arbeiter zu erstellen, muss das nächste Formular ausgefüllt werden. Dieser Arbeiter wird durch Ihren Bitshares Account erstellt, eine lebenslange Mitgliedschaft ist hierfür notwendig.",
+            "create_text_1": "Um einen neuen Arbeiter zu erstellen, muss das nächste Formular ausgefüllt werden. Dieser Arbeiter wird durch Ihren NewBitshares Account erstellt, eine lebenslange Mitgliedschaft ist hierfür notwendig.",
             "create_text_2": "Wählen Sie die Parameter sorgfältig, da diese nachträglich nicht mehr geändert werden können, nachdem der Arbeiter abgeschickt worden ist!",
             "daily_pay": "Tägliche Auszahlung (NBS)",
             "date_text": "Der Starttermin sollte mindestens zwei Wochen in der Zukunft liegen. Dadurch wird den Leute genügend Zeit gegebe, um den Arbeiter zu entdecken, bewerten und abzustimmen.",
