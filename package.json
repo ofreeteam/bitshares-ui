@@ -90,7 +90,7 @@
     },
     "browsersList": "electron 1.7",
     "build": {
-        "productName": "BitShares",
+        "productName": "NewBitShares",
         "appId": "org.bitshares.graphene",
         "files": [
             "build/electron",
@@ -131,7 +131,7 @@
                 "AppImage",
                 "snap"
             ],
-            "synopsis": "BitShares: Cryptocurrency and Decentralized Exchange"
+            "synopsis": "NewBitShares: Cryptocurrency and Decentralized Exchange"
         },
         "directories": {
             "buildResources": "resources",
