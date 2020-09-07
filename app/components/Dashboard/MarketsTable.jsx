@@ -307,7 +307,7 @@ class MarketsTable extends React.Component {
 
     _onError(imgName) {
         if (!this.state.imgError) {
-            this.refs[imgName.toLowerCase()].src = "asset-symbols/bts.png";
+            this.refs[imgName.toLowerCase()].src = "asset-symbols/nbs.png";
             this.setState({
                 imgError: true
             });

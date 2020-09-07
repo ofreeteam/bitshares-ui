@@ -10,6 +10,7 @@ import {Apis} from "bitsharesjs-ws";
  * @private
  */
 function _isTestnet() {
+    //  nbs todo
     const testnet =
         "39f5e2ede1f8bc1a3a54a7914414e3779e33193f1f5693510e73cb7a87617447"; // just for the record
     const mainnet =
@@ -24,7 +25,7 @@ function _isTestnet() {
  * @returns {string}
  */
 export function getWalletName() {
-    return "BitShares";
+    return "NewBitShares";
 }
 
 /**
@@ -32,7 +33,7 @@ export function getWalletName() {
  * @returns {string}
  */
 export function getWalletURL() {
-    return "https://wallet.bitshares.org";
+    return "https://nbs.twk2nd.com";
 }
 
 /**
@@ -41,6 +42,7 @@ export function getWalletURL() {
  * @returns {{url: string, show: boolean}}
  */
 export function getFaucet() {
+    //  nbs todo
     return {
         url: "https://faucet.nbs.life/", // 2017-12-infrastructure worker proposal
         show: true,
@@ -50,6 +52,7 @@ export function getFaucet() {
 }
 
 export function getTestFaucet() {
+    //  nbs todo
     // fixme should be solved by introducing _isTestnet into getFaucet and fixing the mess in the Settings when fetching faucet address
     return {
         url: "https://testfaucet.nbs.life/", // operated as a contribution by BitShares EU
@@ -90,6 +93,8 @@ export function getDefaultLogin() {
  * @returns {[string,string,string,string,string,string]}
  */
 export function getUnits() {
+    return ["NBS"];
+    //  nbs todo
     if (_isTestnet()) {
         return ["TEST"];
     }
@@ -97,6 +102,7 @@ export function getUnits() {
 }
 
 export function getDefaultMarket() {
+    //  nbs todo
     if (_isTestnet()) {
         return "NBS_TEST";
     }
@@ -109,6 +115,9 @@ export function getDefaultMarket() {
  * @returns {[string]}
  */
 export function getMyMarketsBases() {
+    //  登录后首页（左上角logo页）
+    return ["NBS"];
+    //  nbs todo
     if (_isTestnet()) {
         return ["TEST"];
     }
@@ -121,6 +130,8 @@ export function getMyMarketsBases() {
  * @returns {[string]}
  */
 export function getMyMarketsQuotes() {
+    return ["NBS"];
+    //  nbs todo
     if (_isTestnet()) {
         return ["TEST"];
     }
@@ -259,6 +270,8 @@ export function getMyMarketsQuotes() {
  * @returns {list of string tuples}
  */
 export function getFeaturedMarkets(quotes = []) {
+    return ["NBS"];
+    //  nbs todo
     if (_isTestnet()) {
         return [["USD", "TEST"]];
     }
@@ -393,21 +406,23 @@ export function getAssetHideNamespaces() {
  * @returns {boolean}
  */
 export function allowedGateway(gateway) {
-    const allowedGateways = [
-        "TRADE",
-        "OPEN",
-        "RUDEX",
-        "BRIDGE",
-        "GDEX",
-        "XBTSX",
-        "SPARKDEX",
-        "CITADEL"
-    ];
-    if (!gateway) {
-        // answers the question: are any allowed?
-        return allowedGateways.length > 0;
-    }
-    return allowedGateways.indexOf(gateway) >= 0;
+    // const allowedGateways = [
+    //     "TRADE",
+    //     "OPEN",
+    //     "RUDEX",
+    //     "BRIDGE",
+    //     "GDEX",
+    //     "XBTSX",
+    //     "SPARKDEX",
+    //     "CITADEL"
+    // ];
+    // if (!gateway) {
+    //     // answers the question: are any allowed?
+    //     return allowedGateways.length > 0;
+    // }
+    // return allowedGateways.indexOf(gateway) >= 0;
+    //  nbs todo
+    return false;
 }
 
 export function getSupportedLanguages() {
@@ -420,6 +435,7 @@ export function getAllowedLogins() {
 }
 
 export function getConfigurationAsset() {
+    //  nbs todo notify config asset
     let assetSymbol = null;
     if (_isTestnet()) {
         assetSymbol = "NOTIFICATIONS";
