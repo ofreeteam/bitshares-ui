@@ -125,6 +125,10 @@ class HelpContent extends React.PureComponent {
         });
     }
 
+    shouldComponentUpdate(nextProps) {
+        return false;
+    }
+
     render() {
         let locale = this.props.locale || counterpart.getLocale() || "en";
         if (!HelpData[locale]) {

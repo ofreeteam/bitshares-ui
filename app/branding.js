@@ -10,11 +10,10 @@ import {Apis} from "bitsharesjs-ws";
  * @private
  */
 function _isTestnet() {
-    //  nbs todo
     const testnet =
-        "39f5e2ede1f8bc1a3a54a7914414e3779e33193f1f5693510e73cb7a87617447"; // just for the record
+        "905413ea3fd7842629fc7a38e81b32603e2a42bca795a95524c95475a7e31404"; // just for the record
     const mainnet =
-        "4018d7844c78f6a6c41c6a552b898022310fc5dec06da467ee7905a8dad512c8";
+        "a700288e70d97cf01d42c924081feb14c611cfe45d74ab9e7c329ec1772b9827";
 
     // treat every other chain as testnet
     return Apis.instance().chain_id !== mainnet;
