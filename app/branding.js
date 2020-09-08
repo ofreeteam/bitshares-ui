@@ -446,6 +446,6 @@ export function getConfigurationAsset() {
     return {
         symbol: assetSymbol,
         explanation:
-            "This asset is used for decentralized configuration of the BitShares UI placed under bitshares.org."
+            "This asset is used for decentralized configuration of the NewBitShares UI placed under bitshares.org."
     };
 }

@@ -16,7 +16,7 @@ class ChainSelectView extends React.Component {
     };
 
     static defaultProps = {
-        chains: ["BitShares Blockchain"],
+        chains: ["NewBitShares Blockchain"],
         placeholder: null,
         style: {},
         selectStyle: {}

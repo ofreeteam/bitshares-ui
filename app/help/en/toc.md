@@ -1,6 +1,6 @@
 #### Help
 
- * [BitShares](introduction/bitshares.md)
+ * [NewBitShares](introduction/bitshares.md)
  * [Wallet](introduction/wallets.md)
  * [Backups](introduction/backups.md)
  * [Blockchain](introduction/blockchain.md)
@@ -10,9 +10,9 @@
  * [Permissions](accounts/permissions.md)
  * [Memberships](accounts/membership.md)
  * [Market Pegged Assets](assets/mpa.md)
-    * bitUSD
-    * bitEUR
-    * bitGOLD
+    * nbUSD
+    * nbEUR
+    * nbGOLD
  * [User Issued Assets](assets/uia.md)
  * [Privatized BitAssets](assets/privbitassets.md)
  * [Decentralized Exchange](dex/introduction.md)

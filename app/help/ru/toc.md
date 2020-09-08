@@ -1,6 +1,6 @@
 #### Содержание
 
-- [BitShares](introduction/bitshares.md)
+- [NewBitShares](introduction/bitshares.md)
 - [Кошелек](introduction/wallets.md)
 - [Резервные копии](introduction/backups.md)
 - [Блокчейн](introduction/blockchain.md)
@@ -9,9 +9,9 @@
 - [Разрешения](accounts/permissions.md)
 - [Подписки](accounts/membership.md)
 - [Привязанные к рынку активы](assets/mpa.md) 
-    - bitUSD
-    - bitEUR
-    - bitGOLD
+    - nbUSD
+    - nbEUR
+    - nbGOLD
 - [Эмитированные пользователем активы](assets/uia.md)
 - [Приватизированные BitAssets](assets/privbitassets.md)
 - [Децентрализованная биржа](dex/introduction.md)
