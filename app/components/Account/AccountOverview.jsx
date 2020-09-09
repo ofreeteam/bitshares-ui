@@ -211,7 +211,7 @@ class AccountOverview extends React.Component {
                     assetName = asset.get("symbol").toLowerCase();
                     let {isBitAsset} = utils.replaceName(asset);
                     if (isBitAsset) {
-                        assetName = "bit" + assetName;
+                        assetName = "np" + assetName;
                     }
                 }
 
