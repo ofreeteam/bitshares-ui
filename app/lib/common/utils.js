@@ -476,7 +476,7 @@ var Utils = {
             }
         }
 
-        let namespace = isBitAsset ? "np" : toReplace[i];
+        let namespace = isBitAsset ? "nb" : toReplace[i];
         let prefix = null;
         if (!getAssetHideNamespaces().find(a => a.indexOf(namespace) !== -1)) {
             prefix = namespace ? namespace.toLowerCase() : null;

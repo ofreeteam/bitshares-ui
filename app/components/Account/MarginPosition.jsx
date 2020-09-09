@@ -396,7 +396,7 @@ class MarginPosition extends React.Component {
                                 "tooltip.borrow_disabled",
                                 {
                                     asset: isBitAsset
-                                        ? "np" + `${debtAsset.get("symbol")}`
+                                        ? "nb" + `${debtAsset.get("symbol")}`
                                         : `${debtAsset.get("symbol")}`
                                 }
                             )}

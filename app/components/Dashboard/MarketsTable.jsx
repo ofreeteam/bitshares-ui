@@ -475,11 +475,11 @@ class MarketsTable extends React.Component {
                     let baseSymbol = row.base;
 
                     if (quoteIsBitAsset) {
-                        quoteSymbol = "np" + quoteSymbol;
+                        quoteSymbol = "nb" + quoteSymbol;
                     }
 
                     if (baseIsBitAsset) {
-                        baseSymbol = "np" + baseSymbol;
+                        baseSymbol = "nb" + baseSymbol;
                     }
 
                     const filterPair = filter.includes(":");

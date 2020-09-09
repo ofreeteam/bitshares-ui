@@ -1124,7 +1124,7 @@ class AccountPortfolioList extends React.Component {
                     isBitAsset && borrowLink ? (
                         <Tooltip
                             title={counterpart.translate("tooltip.borrow", {
-                                asset: isAssetBitAsset ? "np" + symbol : symbol
+                                asset: isAssetBitAsset ? "nb" + symbol : symbol
                             })}
                         >
                             {borrowLink}
@@ -1135,7 +1135,7 @@ class AccountPortfolioList extends React.Component {
                                 "tooltip.borrow_disabled",
                                 {
                                     asset: isAssetBitAsset
-                                        ? "np" + symbol
+                                        ? "nb" + symbol
                                         : symbol
                                 }
                             )}
@@ -1150,9 +1150,9 @@ class AccountPortfolioList extends React.Component {
                         <Tooltip
                             placement="bottom"
                             title={counterpart.translate(settlePriceTitle, {
-                                asset: isAssetBitAsset ? "np" + symbol : symbol,
+                                asset: isAssetBitAsset ? "nb" + symbol : symbol,
                                 backingAsset: isBackingBitAsset
-                                    ? "np" + backingAsset.get("symbol")
+                                    ? "nb" + backingAsset.get("symbol")
                                     : backingAsset.get("symbol"),
                                 settleDelay:
                                     options.force_settlement_delay_sec / 3600
