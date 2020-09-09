@@ -13,7 +13,7 @@ function _isTestnet() {
     const testnet =
         "905413ea3fd7842629fc7a38e81b32603e2a42bca795a95524c95475a7e31404"; // just for the record
     const mainnet =
-        "a700288e70d97cf01d42c924081feb14c611cfe45d74ab9e7c329ec1772b9827";
+        "cd931cb96d657ff0ef0226f7ae9d25175b3cc96a84490a674ed36170830324e7";
 
     // treat every other chain as testnet
     return Apis.instance().chain_id !== mainnet;
@@ -32,7 +32,7 @@ export function getWalletName() {
  * @returns {string}
  */
 export function getWalletURL() {
-    return "https://nbs.twk2nd.com";
+    return "https://nbs.twk2nd.com/";
 }
 
 /**
@@ -41,17 +41,15 @@ export function getWalletURL() {
  * @returns {{url: string, show: boolean}}
  */
 export function getFaucet() {
-    //  nbs todo
     return {
         url: "https://faucet.nbs.life/", // 2017-12-infrastructure worker proposal
         show: true,
-        editable: false,
-        referrer: "cnvote-test" //nbs todo
+        editable: false
+        // referrer: "cnvote-test" //nbs todo
     };
 }
 
 export function getTestFaucet() {
-    //  nbs todo
     // fixme should be solved by introducing _isTestnet into getFaucet and fixing the mess in the Settings when fetching faucet address
     return {
         url: "https://testfaucet.nbs.life/", // operated as a contribution by BitShares EU
@@ -78,7 +76,7 @@ export function getDefaultTheme() {
 }
 
 /**
- * Default login method. Either "password" (for cloud login mode) or "wallet" (for local wallet mode)
+ * Default login method. Either "password" (for cloud login mode) or "wallet" (for local wallet mode) | 默认登录模式。
  * @returns {string}
  */
 export function getDefaultLogin() {
@@ -87,40 +85,34 @@ export function getDefaultLogin() {
 }
 
 /**
- * Default units used by the UI
+ * Default units used by the UI | 设置界面默认的记账单位
  *
  * @returns {[string,string,string,string,string,string]}
  */
 export function getUnits() {
-    return ["NBS"];
-    //  nbs todo
     if (_isTestnet()) {
-        return ["TEST"];
+        return ["NBS"];
     }
-    return ["NBS", "CNY", "RMB"];
+    return ["NBS", "CNY", "USD"];
 }
 
 export function getDefaultMarket() {
-    //  nbs todo
     if (_isTestnet()) {
         return "NBS_TEST";
     }
-    return "NBS_TEST";
+    return "NBS_CNY";
 }
 
 /**
- * These are the highlighted bases in "My Markets" of the exchange
+ * These are the highlighted bases in "My Markets" of the exchange | 登录后首页（左上角logo）默认市场 自选 + 该配置
  *
  * @returns {[string]}
  */
 export function getMyMarketsBases() {
-    //  登录后首页（左上角logo页）
-    return ["NBS"];
-    //  nbs todo
     if (_isTestnet()) {
-        return ["TEST"];
+        return ["NBS"];
     }
-    return ["NBS", "BTC", "ETH", "USD", "CNY"];
+    return ["NBS", "CNY", "USD"];
 }
 
 /**
@@ -132,7 +124,7 @@ export function getMyMarketsQuotes() {
     return ["NBS"];
     //  nbs todo
     if (_isTestnet()) {
-        return ["TEST"];
+        return ["NBS"];
     }
     let tokens = {
         nativeTokens: [
@@ -391,11 +383,11 @@ export function getAssetNamespaces() {
 }
 
 /**
- * These namespaces will be hidden to the user, this may include "bit" for BitAssets
+ * These namespaces will be hidden to the user, this may include "nb" for BitAssets
  * @returns {[string,string]}
  */
 export function getAssetHideNamespaces() {
-    // e..g "OPEN.", "bit"
+    // e..g "OPEN.", "nb"
     return [];
 }
 

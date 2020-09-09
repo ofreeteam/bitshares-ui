@@ -116,27 +116,31 @@ export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://fake.automatic-selection.com",
     WS_NODE_LIST: [
         {
-            url: "wss://web.cnvote.vip:80",
-            region: "TESTNET - cnvote",
-            location: "cnvote",
-            operator: "cnvote"
-        },
-        {
             url: "wss://fake.automatic-selection.com",
             location: {translate: "settings.api_closest"}
+        },
+        {
+            url: "wss://api-nbs-northchina.cnvote.vip:80",
+            region: "MAINNET - China",
+            location: "Beijing",
+            operator: "CNVOTE"
+        },
+        {
+            url: "wss://api-nbs-hangzhou.cnvote.vip:80",
+            region: "MAINNET - China",
+            location: "Hangzhou",
+            operator: "CNVOTE"
+        },
+        {
+            url: "wss://web.cnvote.vip:80",
+            region: "MAINNET - China",
+            location: "Chongqing",
+            operator: "CNVOTE"
         },
         {
             url: "ws://127.0.0.1:8090",
             location: "Locally hosted"
         }
-        // {
-        //     url: "wss://citadel.li/node",
-        //     region: "Western Europe",
-        //     country: "Iceland",
-        //     location: "Reykjavik",
-        //     operator: "CITADEL",
-        //     contact: "email:citadel.li;support"
-        // },
         // // Testnet
         // {
         //     url: "wss://web.cnvote.vip:80",
