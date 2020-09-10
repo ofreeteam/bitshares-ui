@@ -117,10 +117,10 @@ class WalletActions {
                 }
 
                 let create_account_promise = fetch(
-                    faucetAddress + "api/v1/accounts",
+                    faucetAddress + "/api/v1/accounts",
                     {
                         method: "post",
-                        mode: "no-cors",
+                        mode: "cors",
                         headers: {
                             Accept: "application/json",
                             "Content-type": "application/json"
@@ -143,15 +143,15 @@ class WalletActions {
                         })
                     }
                 )
-                    .then(r => {
+                    .then(r =>
                         r.json().then(res => {
                             if (!res || (res && res.error)) {
                                 reject(res.error);
                             } else {
                                 resolve(res);
                             }
-                        });
-                    })
+                        })
+                    )
                     .catch(reject);
 
                 return create_account_promise
@@ -223,10 +223,10 @@ class WalletActions {
             }
 
             let create_account_promise = fetch(
-                faucetAddress + "api/v1/accounts",
+                faucetAddress + "/api/v1/accounts",
                 {
                     method: "post",
-                    mode: "no-cors",
+                    mode: "cors",
                     headers: {
                         Accept: "application/json",
                         "Content-type": "application/json"

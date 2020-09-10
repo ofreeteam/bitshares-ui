@@ -42,7 +42,7 @@ export function getWalletURL() {
  */
 export function getFaucet() {
     return {
-        url: "https://faucet.nbs.life/", // 2017-12-infrastructure worker proposal
+        url: "https://faucet.nbs.life", // 2017-12-infrastructure worker proposal
         show: true,
         editable: false
         // referrer: "cnvote-test" //nbs todo
@@ -52,7 +52,7 @@ export function getFaucet() {
 export function getTestFaucet() {
     // fixme should be solved by introducing _isTestnet into getFaucet and fixing the mess in the Settings when fetching faucet address
     return {
-        url: "https://testfaucet.nbs.life/", // operated as a contribution by BitShares EU
+        url: "https://testfaucet.nbs.life", // operated as a contribution by BitShares EU
         show: true,
         editable: false
     };
