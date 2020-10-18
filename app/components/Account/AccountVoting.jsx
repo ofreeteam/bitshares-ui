@@ -202,12 +202,25 @@ class AccountVoting extends React.Component {
     }
 
     isChanged(s = this.state) {
-        return (
-            s.proxy_account_id !== s.prev_proxy_account_id ||
-            s.witnesses !== s.prev_witnesses ||
-            s.committee !== s.prev_committee ||
-            !Immutable.is(s.vote_ids, s.prev_vote_ids)
-        );
+        if (s.prev_proxy_account_id) {
+            if (
+                s.current_proxy_input &&
+                !ChainStore.getAccount(s.current_proxy_input)
+            ) {
+                return false;
+            }
+            return (
+                s.proxy_account_id !== s.prev_proxy_account_id ||
+                s.witnesses !== s.prev_witnesses ||
+                s.committee !== s.prev_committee ||
+                !Immutable.is(s.vote_ids, s.prev_vote_ids)
+            );
+        } else {
+            return (
+                s.current_proxy_input &&
+                ChainStore.getAccount(s.current_proxy_input)
+            );
+        }
     }
 
     _getVoteObjects(type = WITNESSES_KEY, vote_ids) {
@@ -267,7 +280,24 @@ class AccountVoting extends React.Component {
     };
 
     onPublish() {
-        this.publish(this.state.proxy_account_id);
+        // 检测是否存在 current_proxy_input 但是 proxy_account_id 为空
+        if (this.state.current_proxy_input && !this.state.proxy_account_id) {
+            const proxyAccount = ChainStore.getAccount(
+                this.state.current_proxy_input
+            );
+            if (proxyAccount) {
+                this.setState(
+                    {
+                        proxy_account_id: proxyAccount.get("id")
+                    },
+                    () => {
+                        this.publish(this.state.proxy_account_id);
+                    }
+                );
+            }
+        } else {
+            this.publish(this.state.proxy_account_id);
+        }
     }
 
     publish(new_proxy_id) {
