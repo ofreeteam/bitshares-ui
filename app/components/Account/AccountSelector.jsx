@@ -360,14 +360,14 @@ class AccountSelector extends React.Component {
                 [accountName]: false
             })
                 .then(account => {
-                    if (
-                        !!account &&
-                        ((this.props.requireActiveSelect &&
-                            inputType == "select") ||
-                            !this.props.requireActiveSelect)
-                    ) {
-                        props.onAccountChanged(account);
-                    }
+                    //if (
+                    //    !!account &&
+                    //    ((this.props.requireActiveSelect &&
+                    //        inputType == "select") ||
+                    //        !this.props.requireActiveSelect)
+                    //) {
+                    props.onAccountChanged(account);
+                    //}
                 })
                 .catch(err => {
                     console.log(err);

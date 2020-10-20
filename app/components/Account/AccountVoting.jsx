@@ -203,12 +203,6 @@ class AccountVoting extends React.Component {
 
     isChanged(s = this.state) {
         if (s.prev_proxy_account_id) {
-            if (
-                s.current_proxy_input &&
-                !ChainStore.getAccount(s.current_proxy_input)
-            ) {
-                return false;
-            }
             return (
                 s.proxy_account_id !== s.prev_proxy_account_id ||
                 s.witnesses !== s.prev_witnesses ||
@@ -216,10 +210,7 @@ class AccountVoting extends React.Component {
                 !Immutable.is(s.vote_ids, s.prev_vote_ids)
             );
         } else {
-            return (
-                s.current_proxy_input &&
-                ChainStore.getAccount(s.current_proxy_input)
-            );
+            return !!s.current_proxy_input;
         }
     }
 
@@ -468,13 +459,16 @@ class AccountVoting extends React.Component {
 
     onProxyChange(current_proxy_input) {
         let proxyAccount = ChainStore.getAccount(current_proxy_input);
-        if (
-            !proxyAccount ||
-            (proxyAccount &&
-                proxyAccount.get("id") !== this.state.proxy_account_id)
-        ) {
+        if (!proxyAccount) {
             this.setState({
                 proxy_account_id: "",
+                proxy_witnesses: Immutable.Set(),
+                proxy_committee: Immutable.Set(),
+                proxy_workers: Immutable.Set()
+            });
+        } else if (proxyAccount.get("id") !== this.state.proxy_account_id) {
+            this.setState({
+                proxy_account_id: proxyAccount.get("id"),
                 proxy_witnesses: Immutable.Set(),
                 proxy_committee: Immutable.Set(),
                 proxy_workers: Immutable.Set()
