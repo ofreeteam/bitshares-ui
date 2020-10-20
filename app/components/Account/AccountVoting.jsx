@@ -202,16 +202,15 @@ class AccountVoting extends React.Component {
     }
 
     isChanged(s = this.state) {
-        if (s.prev_proxy_account_id) {
-            return (
-                s.proxy_account_id !== s.prev_proxy_account_id ||
-                s.witnesses !== s.prev_witnesses ||
-                s.committee !== s.prev_committee ||
-                !Immutable.is(s.vote_ids, s.prev_vote_ids)
-            );
-        } else {
-            return !!s.current_proxy_input;
+        if (!s.prev_proxy_account_id && s.current_proxy_input) {
+            return true;
         }
+        return (
+            s.proxy_account_id !== s.prev_proxy_account_id ||
+            s.witnesses !== s.prev_witnesses ||
+            s.committee !== s.prev_committee ||
+            !Immutable.is(s.vote_ids, s.prev_vote_ids)
+        );
     }
 
     _getVoteObjects(type = WITNESSES_KEY, vote_ids) {
