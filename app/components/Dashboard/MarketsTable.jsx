@@ -447,7 +447,7 @@ class MarketsTable extends React.Component {
             .filter(m => {
                 if (!!filter || m.isStarred) return true;
                 if (
-                    this.props.onlyLiquid ||
+                    this.props.onlyLiquid &&
                     (m.marketStats && "volumeBase" in m.marketStats)
                 ) {
                     return !!m.marketStats.volumeBase || false;

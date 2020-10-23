@@ -121,150 +121,152 @@ export function getMyMarketsBases() {
  * @returns {[string]}
  */
 export function getMyMarketsQuotes() {
-    return ["NBS"];
     //  nbs todo
     if (_isTestnet()) {
         return ["NBS"];
+    } else {
+        return ["NBS", "CNY", "USD", "MINER", "NCN", "SCNY"];
     }
-    let tokens = {
-        nativeTokens: [
-            "BTC",
-            "NBS",
-            "CNY",
-            "EUR",
-            "GOLD",
-            "KRW",
-            "RUBLE",
-            "SILVER",
-            "USD"
-        ],
-        bridgeTokens: ["BRIDGE.BCO", "BRIDGE.BTC", "BRIDGE.MONA", "BRIDGE.ZNY"],
-        gdexTokens: [
-            "GDEX.BTC",
-            "GDEX.BTO",
-            "GDEX.EOS",
-            "GDEX.ETH",
-            "GDEX.BTM",
-            "GDEX.NEO",
-            "GDEX.GAS",
-            "GDEX.QTUM",
-            "GDEX.BKBT",
-            "GDEX.GXC",
-            "GDEX.HPB",
-            "GDEX.SEER",
-            "GDEX.FOTA",
-            "GDEX.JRC",
-            "GDEX.EOSDAC",
-            "GDEX.MTS",
-            "GDEX.GUSD",
-            "GDEX.IQ",
-            "GDEX.NULS",
-            "GDEX.USDT"
-        ],
-        openledgerTokens: [
-            "OBITS",
-            "OPEN.BTC",
-            "OPEN.DASH",
-            "OPEN.DGD",
-            "OPEN.DOGE",
-            "OPEN.EOS",
-            "OPEN.EOSDAC",
-            "OPEN.ETH",
-            "OPEN.EURT",
-            "OPEN.GRC",
-            "OPEN.INCNT",
-            "OPEN.KRM",
-            "OPEN.LISK",
-            "OPEN.LTC",
-            "OPEN.MAID",
-            "OPEN.MKR",
-            "OPEN.NEO",
-            "OPEN.OMG",
-            "OPEN.SBD",
-            "OPEN.STEEM",
-            "OPEN.TUSD",
-            "OPEN.USDT",
-            "OPEN.WAVES",
-            "OPEN.XMR",
-            "OPEN.ZEC",
-            "OPEN.ZRX"
-        ],
-        rudexTokens: [
-            "PPY",
-            "RUDEX.GBG",
-            "RUDEX.GOLOS",
-            "RUDEX.KRM",
-            "RUDEX.SBD",
-            "RUDEX.STEEM",
-            "RUDEX.BTC",
-            "RUDEX.ETH",
-            "RUDEX.EOS",
-            "RUDEX.WLS",
-            "RUDEX.SMOKE",
-            "RUDEX.GRC"
-        ],
-        sparkTokens: [
-            "ZEPH",
-            "PEG.PHP",
-            "SPARKDEX.ETH",
-            "SPARKDEX.BTC",
-            "SPARKDEX.HKD",
-            "SPARKDEX.SGD",
-            "SPARKDEX.AUD",
-            "SPARKDEX.EUR",
-            "SPARKDEX.GBP"
-        ],
-        xbtsxTokens: [
-            "XBTSX.STH",
-            "XBTSX.POST",
-            "XBTSX.DOGE",
-            "XBTSX.BTC",
-            "XBTSX.BTG",
-            "XBTSX.BCH",
-            "XBTSX.LTC",
-            "XBTSX.DASH",
-            "XBTSX.XSPEC",
-            "XBTSX.NVC",
-            "XBTSX.UNI",
-            "XBTSX.NMC",
-            "XBTSX.WAVES",
-            "XBTSX.COF",
-            "XBTSX.MDL",
-            "XBTSX.ETH",
-            "XBTSX.EXR"
-        ],
-        otherTokens: [
-            "BTWTY",
-            "TWENTIX",
 
-            "CVCOIN",
-            "HERO",
-            "OCT",
-            "HERTZ",
-            "ICOO",
-            "SMOKE",
-            "STEALTH",
-            "YOYOW"
-        ]
-    };
+    // let tokens = {
+    //     nativeTokens: [
+    //         "BTC",
+    //         "NBS",
+    //         "CNY",
+    //         "EUR",
+    //         "GOLD",
+    //         "KRW",
+    //         "RUBLE",
+    //         "SILVER",
+    //         "USD"
+    //     ],
+    //     bridgeTokens: ["BRIDGE.BCO", "BRIDGE.BTC", "BRIDGE.MONA", "BRIDGE.ZNY"],
+    //     gdexTokens: [
+    //         "GDEX.BTC",
+    //         "GDEX.BTO",
+    //         "GDEX.EOS",
+    //         "GDEX.ETH",
+    //         "GDEX.BTM",
+    //         "GDEX.NEO",
+    //         "GDEX.GAS",
+    //         "GDEX.QTUM",
+    //         "GDEX.BKBT",
+    //         "GDEX.GXC",
+    //         "GDEX.HPB",
+    //         "GDEX.SEER",
+    //         "GDEX.FOTA",
+    //         "GDEX.JRC",
+    //         "GDEX.EOSDAC",
+    //         "GDEX.MTS",
+    //         "GDEX.GUSD",
+    //         "GDEX.IQ",
+    //         "GDEX.NULS",
+    //         "GDEX.USDT"
+    //     ],
+    //     openledgerTokens: [
+    //         "OBITS",
+    //         "OPEN.BTC",
+    //         "OPEN.DASH",
+    //         "OPEN.DGD",
+    //         "OPEN.DOGE",
+    //         "OPEN.EOS",
+    //         "OPEN.EOSDAC",
+    //         "OPEN.ETH",
+    //         "OPEN.EURT",
+    //         "OPEN.GRC",
+    //         "OPEN.INCNT",
+    //         "OPEN.KRM",
+    //         "OPEN.LISK",
+    //         "OPEN.LTC",
+    //         "OPEN.MAID",
+    //         "OPEN.MKR",
+    //         "OPEN.NEO",
+    //         "OPEN.OMG",
+    //         "OPEN.SBD",
+    //         "OPEN.STEEM",
+    //         "OPEN.TUSD",
+    //         "OPEN.USDT",
+    //         "OPEN.WAVES",
+    //         "OPEN.XMR",
+    //         "OPEN.ZEC",
+    //         "OPEN.ZRX"
+    //     ],
+    //     rudexTokens: [
+    //         "PPY",
+    //         "RUDEX.GBG",
+    //         "RUDEX.GOLOS",
+    //         "RUDEX.KRM",
+    //         "RUDEX.SBD",
+    //         "RUDEX.STEEM",
+    //         "RUDEX.BTC",
+    //         "RUDEX.ETH",
+    //         "RUDEX.EOS",
+    //         "RUDEX.WLS",
+    //         "RUDEX.SMOKE",
+    //         "RUDEX.GRC"
+    //     ],
+    //     sparkTokens: [
+    //         "ZEPH",
+    //         "PEG.PHP",
+    //         "SPARKDEX.ETH",
+    //         "SPARKDEX.BTC",
+    //         "SPARKDEX.HKD",
+    //         "SPARKDEX.SGD",
+    //         "SPARKDEX.AUD",
+    //         "SPARKDEX.EUR",
+    //         "SPARKDEX.GBP"
+    //     ],
+    //     xbtsxTokens: [
+    //         "XBTSX.STH",
+    //         "XBTSX.POST",
+    //         "XBTSX.DOGE",
+    //         "XBTSX.BTC",
+    //         "XBTSX.BTG",
+    //         "XBTSX.BCH",
+    //         "XBTSX.LTC",
+    //         "XBTSX.DASH",
+    //         "XBTSX.XSPEC",
+    //         "XBTSX.NVC",
+    //         "XBTSX.UNI",
+    //         "XBTSX.NMC",
+    //         "XBTSX.WAVES",
+    //         "XBTSX.COF",
+    //         "XBTSX.MDL",
+    //         "XBTSX.ETH",
+    //         "XBTSX.EXR"
+    //     ],
+    //     otherTokens: [
+    //         "BTWTY",
+    //         "TWENTIX",
 
-    let allTokens = [];
-    for (let type in tokens) {
-        allTokens = allTokens.concat(tokens[type]);
-    }
-    return allTokens;
+    //         "CVCOIN",
+    //         "HERO",
+    //         "OCT",
+    //         "HERTZ",
+    //         "ICOO",
+    //         "SMOKE",
+    //         "STEALTH",
+    //         "YOYOW"
+    //     ]
+    // };
+
+    // let allTokens = [];
+    // for (let type in tokens) {
+    //     allTokens = allTokens.concat(tokens[type]);
+    // }
+    // return allTokens;
 }
 
 /**
- * The featured markets displayed on the landing page of the UI
+ * The featured markets displayed on the landing page of the UI TODO:not used??
  *
  * @returns {list of string tuples}
  */
 export function getFeaturedMarkets(quotes = []) {
-    return ["NBS"];
+    return ["NBS", "CNY"];
     //  nbs todo
     if (_isTestnet()) {
-        return [["USD", "TEST"]];
+        return [["NBS", "CNY"]];
     }
     return [
         ["USD", "BTS"],

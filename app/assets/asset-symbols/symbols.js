@@ -4,6 +4,9 @@ require("file-loader?name=asset-symbols/[name].png!./unknown.png");
 // Core asset
 require("file-loader?name=asset-symbols/[name].png!./bts.png");
 require("file-loader?name=asset-symbols/[name].png!./nbs.png");
+require("file-loader?name=asset-symbols/[name].png!./miner.png");
+require("file-loader?name=asset-symbols/[name].png!./ncn.png");
+require("file-loader?name=asset-symbols/[name].png!./scny.png");
 
 // BitAssets
 require("file-loader?name=asset-symbols/[name].png!./usd.png");
